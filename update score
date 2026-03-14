@@ -1,0 +1,27 @@
+// SIMULATING A LIVE MONITORING FEED
+const sportsData = [
+    { match: "Arsenal vs Napoli", score: [2, 1], time: "82'" },
+    { match: "Lakers vs Celtics", score: [102, 98], time: "Q4" }
+];
+
+function startMonitoring() {
+    setInterval(() => {
+        // Randomly update a score to simulate "Live Data"
+        const gameIndex = Math.floor(Math.random() * sportsData.length);
+        const teamIndex = Math.floor(Math.random() * 2);
+        
+        // 5% chance a goal/point is scored every 5 seconds
+        if (Math.random() > 0.95) {
+            sportsData[gameIndex].score[teamIndex]++;
+            showToast(`GOAL/POINT! New Score: ${sportsData[gameIndex].match}`, '⚽', 'success');
+            renderScores(); // Update the UI
+        }
+    }, 5000); 
+}
+
+function renderScores() {
+    // This connects your Data to the HTML
+    console.log("UI Updated with latest Monitoring Data:", sportsData);
+}
+
+startMonitoring();
