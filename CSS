@@ -1,0 +1,28 @@
+/* Add to your :root */
+:root {
+  --neon-cyan: #00f2ff;
+  --glass: rgba(255, 255, 255, 0.03);
+  --glass-border: rgba(255, 255, 255, 0.1);
+}
+
+/* Glass Card Effect for Monitoring */
+.monitoring-card {
+    background: var(--glass);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--glass-border);
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+}
+
+/* Data Glow Effect */
+.astat-val {
+    text-shadow: 0 0 15px var(--red-glow);
+    color: var(--white);
+}
+
+/* Live Badge Pulse */
+.status-live {
+    background: linear-gradient(90deg, #e8192c, #7a0d17);
+    box-shadow: 0 0 15px var(--red-glow);
+}
